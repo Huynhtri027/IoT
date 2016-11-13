@@ -36,7 +36,7 @@ public class Login extends Activity {
 
     static String userString;
     static String pwdString;
-    public static final String ip = "192.168.1.2";
+    public static final String ip = "192.168.1.145";
     /** Called when the activity is first created. */
     private static final String TAG = "LoginActivity";
     @Override

@@ -48,7 +48,10 @@
                 android:id="@+id/nav_thermostat"
                 android:icon="@drawable/thermostat"
                 android:title="Thermostats" />
-
+            <item
+                android:id="@+id/nav_weather"
+                android:icon="@drawable/weather"
+                android:title="Weather" />
             <item
                 android:id="@+id/nav_energy"
                 android:icon="@drawable/energy"

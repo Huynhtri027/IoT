@@ -53,15 +53,15 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }/* else {
             //super.onBackPressed();
-            HomeFragment homeFragment = new HomeFragment();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.content_main, homeFragment).commit();
+           // HomeFragment homeFragment = new HomeFragment();
+           // FragmentManager manager = getSupportFragmentManager();
+          //  manager.beginTransaction().replace(R.id.content_main, homeFragment).commit();
 
 
 
-        }
+        }*/
     }
 
     @Override
@@ -92,13 +92,13 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if(id == R.id.nav_home){
+        /*if(id == R.id.nav_home){
             Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
             HomeFragment homeFragment = new HomeFragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.content_main, homeFragment).commit();
-        }
-        else if (id == R.id.nav_security_system) {
+        }*/
+        if (id == R.id.nav_security_system) {
             // Handle the camera action
             Toast.makeText(this, "Security System", Toast.LENGTH_SHORT).show();
             SecurityFragment securityFragment = new SecurityFragment();
@@ -156,6 +156,14 @@ public class MainActivity extends AppCompatActivity
             SensorsFragment sensorsFragment = new SensorsFragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.content_main, sensorsFragment).commit();
+
+        }
+
+        else if (id == R.id.nav_weather) {
+            Toast.makeText(this, "Weather", Toast.LENGTH_SHORT).show();
+            WeatherFragment weatherFragment = new WeatherFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content_main, weatherFragment).commit();
 
         }
 

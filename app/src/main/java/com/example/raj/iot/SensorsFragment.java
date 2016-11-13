@@ -111,57 +111,73 @@ public class SensorsFragment extends Fragment implements View.OnClickListener{
             }
         }
     };
-
     public void onClick(View v)
     {
         String user_id = "1";
         switch (v.getId())
         {
             case R.id.on:
-                if(main_door.isChecked()) {
-                    Toast.makeText(getActivity(), "1st Floor Door is Open", Toast.LENGTH_SHORT).show();
-                    getConnection(user_id, "1st Floor", "Door", "Open");
-                }
-                else if(window1.isChecked()) {
-                    Toast.makeText(getActivity(), "1st Floor Window is Open", Toast.LENGTH_SHORT).show();
-                    getConnection(user_id, "1st Floor", "Window", "Open");
-                }
+                if (sensor_main.isChecked()) {
 
-                else if(up_door.isChecked()) {
-                    Toast.makeText(getActivity(), "2nd Floor Door is Open", Toast.LENGTH_SHORT).show();
-                    getConnection(user_id, "2nd Floor", "Door", "Open");
-                }
-                else if(window3.isChecked()) {
-                    Toast.makeText(getActivity(), "2nd Floor Window is Open", Toast.LENGTH_SHORT).show();
-                    getConnection(user_id, "2nd Floor", "Window", "Open");
-                }
-                else {
-                    Toast.makeText(getActivity(), "Door/Window not selected", Toast.LENGTH_SHORT).show();
+                    if (main_door.isChecked()) {
+                        Toast.makeText(getActivity(), "1st Floor Door is Open", Toast.LENGTH_SHORT).show();
+                        getConnection(user_id, "1st Floor", "Door", "Open");
+                    } else if (window1.isChecked()) {
+                        Toast.makeText(getActivity(), "1st Floor Window is Open", Toast.LENGTH_SHORT).show();
+                        getConnection(user_id, "1st Floor", "Window", "Open");
+                    }
+                    else {
+                        Toast.makeText(getActivity(), "Door/Window not selected", Toast.LENGTH_SHORT).show();
+
+                    }
 
                 }
+
+                if (sensor_up.isChecked()) {
+
+                    if (main_door.isChecked()) {
+                        Toast.makeText(getActivity(), "2nd Floor Door is Open", Toast.LENGTH_SHORT).show();
+                        getConnection(user_id, "2nd Floor", "Door", "Open");
+                    } else if (window1.isChecked()) {
+                        Toast.makeText(getActivity(), "2nd Floor Window is Open", Toast.LENGTH_SHORT).show();
+                        getConnection(user_id, "2nd Floor", "Window", "Open");
+                    }
+                    else {
+                        Toast.makeText(getActivity(), "Door/Window not selected", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
 
                 break;
             case R.id.off:
-                if(main_door.isChecked()) {
-                    Toast.makeText(getActivity(), "1st Floor Door Closed", Toast.LENGTH_SHORT).show();
-                    getConnection(user_id, "1st Floor", "Door", "Closed");
+                if(sensor_main.isChecked()) {
+                    if (main_door.isChecked()) {
+                        Toast.makeText(getActivity(), "1st Floor Door Closed", Toast.LENGTH_SHORT).show();
+                        getConnection(user_id, "1st Floor", "Door", "Closed");
+                    } else if (window1.isChecked()) {
+                        Toast.makeText(getActivity(), "1st Floor Window Closed", Toast.LENGTH_SHORT).show();
+                        getConnection(user_id, "1st Floor", "Window", "Closed");
+                    }
+                    else
+                        Toast.makeText(getActivity(),"Door/Window not selected", Toast.LENGTH_SHORT).show();
+                    break;
                 }
-                else if(window1.isChecked()) {
-                    Toast.makeText(getActivity(), "1st Floor Window Closed", Toast.LENGTH_SHORT).show();
-                    getConnection(user_id, "1st Floor", "Window", "Closed");
+                if(sensor_up.isChecked()){
+                    if (main_door.isChecked()) {
+                        Toast.makeText(getActivity(), "2nd Floor Door Closed", Toast.LENGTH_SHORT).show();
+                        getConnection(user_id, "2nd Floor", "Door", "Closed");
+                    } else if (window1.isChecked()) {
+                        Toast.makeText(getActivity(), "2nd Floor Window Closed", Toast.LENGTH_SHORT).show();
+                        getConnection(user_id, "2nd Floor", "Window", "Closed");
+                    }
+                    else
+                        Toast.makeText(getActivity(),"Door/Window not selected", Toast.LENGTH_SHORT).show();
+                    break;
+
                 }
 
-                else if(up_door.isChecked()) {
-                    Toast.makeText(getActivity(), "2nd Floor Door Closed", Toast.LENGTH_SHORT).show();
-                    getConnection(user_id, "2nd Floor", "Door", "Closed");
-                }
-                else if(window3.isChecked()) {
-                    Toast.makeText(getActivity(), "2nd Floor Window Closed", Toast.LENGTH_SHORT).show();
-                    getConnection(user_id, "2nd Floor", "Window", "Closed");
-                }
-                else
-                    Toast.makeText(getActivity(),"Door/Window not selected", Toast.LENGTH_SHORT).show();
-                break;
+
 
         }
     }
